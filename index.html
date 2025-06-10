@@ -3,308 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indienstein 工具箱 - JtheWL</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 20px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .tool-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .tool-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #4a5568;
-            display: flex;
-            align-items: center;
-        }
-
-        .tool-card .icon {
-            font-size: 2rem;
-            margin-right: 15px;
-        }
-
-        .tool-card p {
-            color: #718096;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .footer {
-            text-align: center;
-            color: rgba(255,255,255,0.8);
-            margin-top: 50px;
-        }
-
-        .github-link {
-            color: white;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .github-link:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.6);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .coming-soon {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            color: white;
-            margin: 30px 0;
-        }
-
-        .coming-soon h2 {
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: #48bb78;
-            color: white;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-left: 10px;
-        }
-
-        .status-badge.coming-soon {
-            background: #ed8936;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .tools-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-    </style>
+    <title>🎮 Indienstein - AI游戏创意生成器</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🛠️ Indienstein 工具箱</h1>
-            <p>JtheWL 的个人实用工具集合</p>
-            <p>让生活更简单，让工作更高效 ✨</p>
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🎮 Indienstein</h1>
+                <p>AI游戏创意生成器</p>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="home">🏠 首页</button>
+                <button class="nav-tab" data-tab="chat">💬 AI聊天</button>
+                <button class="nav-tab" data-tab="generator">🎲 创意生成</button>
+                <button class="nav-tab" data-tab="settings">⚙️ 设置</button>
+            </div>
+        </nav>
+
+        <!-- 首页内容 -->
+        <div id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h2>🚀 欢迎使用Indienstein！</h2>
+                    <p>使用AI和随机词组合，点燃游戏开发的创意火花！让灵感不再枯竭～</p>
+                    <div class="action-buttons">
+                        <button class="btn primary" onclick="switchTab('generator')">🎲 开始创意生成</button>
+                        <button class="btn secondary" onclick="switchTab('chat')">💬 AI聊天助手</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-words">
+                        <span class="word">太空</span>
+                        <span class="word">猫咪</span>
+                        <span class="word">跑酷</span>
+                        <span class="word">解谜</span>
+                        <span class="word">机械</span>
+                        <span class="word">魔法</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h3>✨ 核心功能</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎲</div>
+                        <h4>随机词汇生成</h4>
+                        <p>从多维度词库中智能抽取关键词，为创意提供丰富素材</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h4>AI创意缝合</h4>
+                        <p>使用大语言模型将随机词汇融合成完整的游戏创意</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>爆造模式</h4>
+                        <p>批量生成大量创意方案，让灵感源源不断</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h4>AI聊天助手</h4>
+                        <p>内置可爱的小猫娘AI助手，随时获取开发建议</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-ideas">
+                <h3>🎯 最近生成的创意</h3>
+                <div id="recent-ideas-list" class="ideas-list">
+                    <div class="idea-card">
+                        <h4>🌌 太空猫咪跑酷</h4>
+                        <p>一只可爱的太空猫在各种星球间跳跃，收集星尘并躲避陨石...</p>
+                        <div class="idea-tags">
+                            <span class="tag">跑酷</span>
+                            <span class="tag">太空</span>
+                            <span class="tag">猫咪</span>
+                        </div>
+                    </div>
+                    <div class="idea-card">
+                        <h4>🍄 机械蘑菇农场</h4>
+                        <p>在一个蒸汽朋克世界中，玩家需要种植和收获各种机械化的蘑菇...</p>
+                        <div class="idea-tags">
+                            <span class="tag">农场</span>
+                            <span class="tag">蒸汽朋克</span>
+                            <span class="tag">机械</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="tools-grid">
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">📝</span>
-                    文本处理工具
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>强大的文本处理工具，支持格式转换、批量替换、正则表达式匹配等功能</p>
-                <button class="btn" disabled>敬请期待</button>
-            </div>
+        <!-- AI聊天页面 -->
+        <div id="chat" class="tab-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>💬 AI助手聊天</h3>
+                    <div class="assistant-selector">
+                        <label>🤖 助手选择:</label>
+                        <select id="assistant-select">
+                            <option value="eggcat">EggCat小猫娘</option>
+                            <option value="creative">创意助手</option>
+                            <option value="technical">技术顾问</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message assistant">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>主人好～我是EggCat，你的专属小猫娘AI助手喵！有什么可以帮助你的吗？</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">🎨</span>
-                    图片工具
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>图片压缩、格式转换、尺寸调整、水印添加等实用图片处理功能</p>
-                <button class="btn" disabled>敬请期待</button>
-            </div>
-
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">🔐</span>
-                    加密解密
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>各种常用的加密解密算法，包括Base64、MD5、SHA等，保护您的数据安全</p>
-                <button class="btn" disabled>敬请期待</button>
-            </div>
-
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">📊</span>
-                    数据转换
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>JSON、XML、CSV等数据格式之间的转换，让数据处理更加便捷</p>
-                <button class="btn" disabled>敬请期待</button>
-            </div>
-
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">🌐</span>
-                    网络工具
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>URL编码解码、IP查询、二维码生成等实用的网络相关工具</p>
-                <button class="btn" disabled>敬请期待</button>
-            </div>
-
-            <div class="tool-card">
-                <h3>
-                    <span class="icon">⏱️</span>
-                    时间工具
-                    <span class="status-badge coming-soon">即将推出</span>
-                </h3>
-                <p>时间戳转换、日期计算、倒计时器等各种时间相关的实用工具</p>
-                <button class="btn" disabled>敬请期待</button>
+                <div class="chat-input-container">
+                    <div class="input-group">
+                        <textarea 
+                            id="chat-input" 
+                            placeholder="输入你想说的话..."
+                            rows="3"
+                            maxlength="1000"
+                        ></textarea>
+                        <button id="send-button" class="btn primary">
+                            <span class="send-text">发送</span>
+                            <span class="loading" style="display: none;">发送中...</span>
+                        </button>
+                    </div>
+                    <div class="input-controls">
+                        <label class="checkbox">
+                            <input type="checkbox" id="stream-mode" checked>
+                            <span>流式对话</span>
+                        </label>
+                        <div class="char-count">
+                            <span id="char-count">0</span>/1000
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="coming-soon">
-            <h2>🚀 更多工具正在开发中...</h2>
-            <p>如果您有好的建议或需要特定的工具，欢迎在GitHub上提出Issue！</p>
+        <!-- 创意生成页面 -->
+        <div id="generator" class="tab-content">
+            <div class="generator-container">
+                <h3>🎲 游戏创意生成器</h3>
+                <div class="generator-panel">
+                    <div class="dimension-selector">
+                        <h4>选择创意维度:</h4>
+                        <div class="dimension-grid">
+                            <label class="dimension-item">
+                                <input type="checkbox" value="机制" checked>
+                                <span>🎮 游戏机制</span>
+                            </label>
+                            <label class="dimension-item">
+                                <input type="checkbox" value="基调" checked>
+                                <span>🎨 游戏基调</span>
+                            </label>
+                            <label class="dimension-item">
+                                <input type="checkbox" value="角色">
+                                <span>👤 游戏角色</span>
+                            </label>
+                            <label class="dimension-item">
+                                <input type="checkbox" value="场景">
+                                <span>🏞️ 游戏场景</span>
+                            </label>
+                            <label class="dimension-item">
+                                <input type="checkbox" value="物品">
+                                <span>🎁 游戏物品</span>
+                            </label>
+                            <label class="dimension-item">
+                                <input type="checkbox" value="目标">
+                                <span>🎯 游戏目标</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="generation-controls">
+                        <div class="control-group">
+                            <label>生成数量:</label>
+                            <input type="range" id="generation-count" min="1" max="10" value="3">
+                            <span id="count-display">3</span>
+                        </div>
+                        <button id="generate-button" class="btn primary large">
+                            🚀 开始生成创意
+                        </button>
+                    </div>
+
+                    <div id="generation-results" class="results-container" style="display: none;">
+                        <h4>✨ 生成结果</h4>
+                        <div id="results-list" class="results-list"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>&copy; 2024 JtheWL. 用 ❤️ 制作</p>
-            <a href="https://github.com/GJM258/Indienstein-by-JtheWL" class="github-link" target="_blank">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                查看源码
-            </a>
+        <!-- 设置页面 -->
+        <div id="settings" class="tab-content">
+            <div class="settings-container">
+                <h3>⚙️ 设置</h3>
+                
+                <div class="settings-section">
+                    <h4>🤖 AI服务配置</h4>
+                    <div class="setting-item">
+                        <label>AI服务商:</label>
+                        <select id="ai-provider">
+                            <option value="qwen">通义千问 (推荐)</option>
+                            <option value="openai">OpenAI GPT</option>
+                            <option value="custom">自定义</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label>API密钥:</label>
+                        <input type="password" id="api-key" placeholder="请输入你的API密钥">
+                    </div>
+                    <div class="setting-item">
+                        <label>API地址:</label>
+                        <input type="url" id="api-url" placeholder="API服务地址" value="https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>🎨 界面设置</h4>
+                    <div class="setting-item">
+                        <label>主题:</label>
+                        <select id="theme-select">
+                            <option value="light">亮色主题</option>
+                            <option value="dark">暗色主题</option>
+                            <option value="auto">跟随系统</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label class="checkbox">
+                            <input type="checkbox" id="animations" checked>
+                            <span>启用动画效果</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn primary" onclick="saveSettings()">💾 保存设置</button>
+                    <button class="btn secondary" onclick="resetSettings()">🔄 重置设置</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // 添加一些交互效果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 随机延迟动画，让卡片依次出现
-            const cards = document.querySelectorAll('.tool-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-
-            // 添加点击效果
-            const buttons = document.querySelectorAll('.btn:not(:disabled)');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        });
-    </script>
+    <!-- 脚本引用 -->
+    <script src="scripts/word-generator.js"></script>
+    <script src="scripts/ai-service.js"></script>
+    <script src="scripts/ui-manager.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html> 
